@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Add Font Awesome CSS link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body,
+        h1,
+        ul,
+        li,
+        a {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        /* Global styles */
+        #pak {
+            background-image: url('https://i.pinimg.com/originals/01/30/93/0130936b2eea1b178b041251c974c013.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* background-attachment: fixed; */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header ul {
+            display: flex;
+            font-size: 24px;
+        }
+
+        header li {
+            margin-right: 20px;
+        }
+
+        header a {
+            color: #fff;
+        }
+
+         header a:hover {
+            color: whitesmoke;
+        } 
+
+        /* Main container styles */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Introduction styles */
+        .intro {
+            margin-top: 2rem;
+        }
+
+        .name {
+            font-size: 48px;
+            cursor: pointer;
+            animation: textAnimation 2s infinite alternate;
+        }
+
+        /* Define the animation keyframes */
+        @keyframes textAnimation {
+            0% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .name span {
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .name:hover span {
+            color: #afb6bd;
+        }
+
+        /* Image styles */
+        .img {
+            width: 200px;
+            height: 200px;
+            border: 5px solid white;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img:hover img {
+            filter: grayscale(100%);
+        }
+
+        /* Light mode and dark mode styles */
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Button styles */
+        .mode-button {
+            font-size: 24px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .mode-button:hover {
+            transform: scale(1.8);
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            font-size: 36px;
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Change icon colors on hover */
+        .social-icon:hover {
+            color: #0077B5;
+            /* Facebook */
+        }
+
+        .social-icon:hover {
+            color: #25D366;
+            /* WhatsApp */
+        }
+
+        .social-icon:hover {
+            color: #1DA1F2;
+            /* Twitter */
+        }
+
+        .social-icon:hover {
+            color: whitesmoke;
+            /* YouTube */
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            header ul {
+                font-size: 18px;
+                /* Adjust font size for smaller screens */
+            }
+
+            header li {
+                margin-right: 10px;
+                /* Reduce margin for smaller screens */
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .name {
+                font-size: 36px;
+                /* Adjust font size for smaller screens */
+            }
+
+            .img {
+                width: 150px;
+                height: 150px;
+                margin-top: 2rem;
+                /* Add spacing below the name */
+            }
+        }
+
+        #me {
+            text-align: center;
+            font-size: 3.8rem;
+            margin: 100px;
+            transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Style the header */
+        header {
+            background-color: #666;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+
+        /* Create two columns/boxes that float next to each other */
+        nav {
+            float: left;
+            width: 30%;
+            height: 300px;
+            background: #ccc;
+            padding: 20px;
+        }
+
+        /* Style the list inside the menu */
+
+        #im {
+            list-style-type: none;
+            padding: 0;
+            background-color: white;
+            margin: 0%;
+            height: 100%;
+            overflow: hidden;
+            border: 8px solid white;
+            transition: transform 0.3s;
+        }
+
+        ul:hover {
+            transform: scale(1.2);
+
+        }
+
+        article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #6f7e80;
+            height: 300px;
+
+        }
+
+        /* Clear floats after the columns */
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: #666;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        @media (max-width: 600px) {
+
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .gallery {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            max-width: 1350px;
+            max-height: 600px;
+        }
+
+        .gallery-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            animation: slide 50s linear infinite;
+        }
+
+        .gallery-item {
+            flex: 0 0 100%;
+            margin-right: 20px;
+            border: 5px solid #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .gallery-item:last-child {
+            margin-right: 0;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.001s ease-in-out;
+        }
+
+
+        @keyframes slide {
+            0% {
+                transform: translateX(8);
+            }
+
+            100% {
+                transform: translateX(-800%);
+            }
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+
+        .fade-in {
+            opacity: 1;
+        }
+
+        .contact-content-con {
+            display: flex;
+            padding-top: 3.5rem;
+        }
+
+        .contact-content-con .left-contact {
+            flex: 2;
+        }
+
+        .contact-content-con .left-contact h4 {
+            margin-top: 1rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        .contact-content-con .left-contact p {
+            margin: 1rem 0;
+            line-height: 2rem;
+        }
+
+        .contact-content-con .left-contact .contact-info .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .contact-content-con .left-contact .contact-info .contact-item p {
+            margin: 0.3rem 0 !important;
+            padding: 0 !important;
+        }
+
+        .contact-content-con .left-contact .contact-info .contact-item .icon {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+        }
+
+        .contact-content-con .left-contact .contact-info .contact-item .icon i {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+        }
+
+        .contact-content-con .left-contact .contact-icon {
+            display: flex;
+            margin-top: 2rem;
+        }
+
+        .contact-content-con .left-contact .contact-icon a {
+            display: flex;
+            align-items: center;
+            color: black;
+            background-color: var(--color-grey-5);
+            cursor: pointer;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 0.4rem;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .contact-content-con .left-contact .contact-icon a:hover {
+            background-color: var(--color-secondary);
+        }
+
+        .contact-content-con .left-contact .contact-icon a:hover i {
+            color: var(--color-primary);
+        }
+
+        .contact-content-con .left-contact .contact-icon a i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .contact-content-con .right-contact {
+            flex: 3;
+            margin-left: 3rem;
+        }
+
+        .contact-content-con .right-contact .input-control {
+            margin: 1.5rem 0;
+        }
+
+        .contact-content-con .right-contact .input-control input,
+        .contact-content-con .right-contact .input-control textarea {
+            border-radius: 30px;
+            font-weight: inherit;
+            font-size: inherit;
+            font-family: inherit;
+            padding: 0.8rem 1.1rem;
+            outline: none;
+            border: none;
+            background-color: var(--color-grey-5);
+            width: 100%;
+            color: black;
+            resize: none;
+        }
+
+
+        #fff {
+            border: solid black 1px;
+            margin: 0.7rem;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        #eee {
+            border: solid black 1px;
+            margin: 0.7rem;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        #ccc {
+            border: solid black 1px;
+            margin: 0.7rem;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        #bbb {
+            border: solid black 1px;
+            margin: 0.7rem;
+            border-radius: 10px;
+            padding-top: 0px;
+            background-color: white;
+        }
+
+        #submit-btn {
+            color: white;
+            transition: transform 0.2s;
+            cursor: pointer;
+            margin-top: 1.5rem;
+
+        }
+
+        #submit-btn:hover {
+            transform: scale(1.2);
+            color: black;
+         }
+
+        /* Add hover effect to make icons bigger one by one */
+          #homee:hover {
+            transform: scale(1.4);
+        }
+
+        #homee:hover {
+            transition: transform 0.3s ease;
+        }
+
+        #aboutMee:hover {
+            transform: scale(1.4);
+        }
+
+        #prott:hover {
+            transform: scale(1.4);
+        }
+
+        #contactt:hover {
+            transform: scale(1.4);
+        }
+        #aboutMee:hover {
+
+            transition: transform 0.3s ease;
+        }
+
+        #prott:hover {
+
+            transition: transform 0.3s ease;
+        }
+
+        #contactt:hover {
+
+            transition: transform 0.3s ease;
+        }
+        .icon:hover {
+            background-color: none !important;
+            color: white !important;
+
+        }
+
+        .social-icons {
+            display: flex;
+        }
+
+        .social-icon {
+            margin: 10px;
+            transition: transform 0.3s ease;
+        } 
+
+         /* Apply the hover effect individually to each icon  */
+        .social-icon:nth-child(1):hover {
+            transform: scale(1.4);
+        }
+
+        .social-icon:nth-child(2):hover {
+            transform: scale(1.4);
+        }
+
+        .social-icon:nth-child(3):hover {
+            transform: scale(1.4);
+        }
+
+        .social-icon:nth-child(4):hover {
+            transform: scale(1.4);
+        } 
+    </style>
+</head>
+
+<body>
+    <section id="pak">
+        <header>
+            <div style="display: flex;" class="icon">
+                <li><a href=""><i class="fas fa-home" id="homee"></i></a></li>
+                <li><a href="#me"><i class="fas fa-user" id="aboutMee"></i></a></li>
+                <li><a href="#fas"><i class="fas fa-image" id="prott"></i></a></li>
+                <li><a href="#fass"><i class="fas fa-envelope" id="contactt"></i></a></li>
+            </div>
+            <!-- Add a button to toggle light/dark mode -->
+            <button class="mode-button" onclick="toggleMode()">◑</button>
+        </header>
+
+        <div class="container">
+            <div class="intro">
+                <h1 class="name">
+                    Hi, I'm <br><span>Zulqarnain Ali.</span>
+                    A Web Developer.
+                </h1>
+            </div>
+            <div class="img">
+                <img
+                    src="https://scontent.fisb17-1.fna.fbcdn.net/v/t39.30808-6/329054391_576081487723970_6534340763992044064_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5614bc&_nc_eui2=AeFGoredF1FkTGJalAFpw9m9jF_t7hZg896MX-3uFmDz3lpcuIZtJLWwup6U7c0W5-G3iubNvRrJItZzbNMi5dDF&_nc_ohc=DZ41w8EG5kcAX9R9RT1&_nc_ht=scontent.fisb17-1.fna&oh=00_AfBct00Rb2sBjd4aOhiuVUi6EzRO960_vaaL_1xsNc_-Jg&oe=6501A9A2">
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/zulqarnainali.shigri" class="social-icon"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://web.whatsapp.com/" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://twitter.com/zulqarn96078131" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/channel/UCAb7a4Kw_Y6-2Hf2-BM8mSg" class="social-icon"><i
+                    class="fab fa-youtube"></i></a>
+        </div>
+    </section>
+    <section>
+        <h1 id="me">ABOUT ME</h1>
+        <header>
+            <h2>Developer & Designer</h2>
+        </header>
+
+        <section>
+            <nav>
+                <ul id="im">
+                    <img src="https://www.pngmart.com/files/22/Programmer-PNG-HD-Isolated.png" alt="">
+                </ul>
+            </nav>
+
+            <article>
+                <h1>Front End:</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nobis tenetur ipsam, iure doloribus
+                    aliquid nemo quae id sit, eius perferendis illum quo blanditiis temporibus deleniti dolores quaerat
+                    culpa voluptas?</p>
+                <h1>Back End:</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis hic quos repellendus quisquam
+                    corporis quidem illum, dolor sunt dolore laborum vitae autem consequatur repudiandae libero sed
+                    veniam aliquid obcaecati necessitatibus!</p>
+            </article>
+        </section>
+
+        <footer>
+            <p>@ZulqarnainAliShigri</p>
+        </footer>
+    </section>
+    <section>
+        <h1 id="fas" style="text-align: center; font-size: 3.7rem; margin: 100px;">IMAGE GALLERY</h1>
+        <div class="gallery">
+            <div class="gallery-container">
+                <div class="gallery-item"><img
+                        src="https://plus.unsplash.com/premium_photo-1678565869434-c81195861939?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2ViJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                        alt="Image 1"></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2ViJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                        alt="Image 2"></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2ViJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                        alt="Image 3"></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2ViJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                        alt="Image 4"></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2ViJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                        alt="Image 5"></div>
+                <div class="gallery-item"><img
+                        src="https://plus.unsplash.com/premium_photo-1661766140137-4c403bf77906?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                        alt="Image 6"></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                        alt="Image 7"></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+                        alt="Image 8"></div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section>
+         <section class="container contact" id="contact">
+            <div class="contact-container">
+                <div class="main-title">
+                    <h2> <span></span><span class="bg-text" id="fass"></span></h2>
+                </div>
+                <div class="contact-content-con">
+                    <div class="left-contact">
+                        <h4 style="font-size: 60px;">Contact me here</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            In, laborum numquam? Quam excepturi perspiciatis quas quasi.
+                        </p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Location</span>
+                                </div>
+                                <p>
+                                    : Rawalpindi, Pakistan
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Email</span>
+                                </div>
+                                <p>
+                                    <span>: zulqarnaialishigri@gmail.com</span>
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>Education</span>
+                                </div>
+                                <p>
+                                    <span>: Virtual University, RWP Pakistan</span>
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Mobile Number</span>
+                                </div>
+                                <p>
+                                    <span>: 03497001241</span>
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-globe"></i>
+                                    <span>Languages</span>
+                                </div>
+                                <p>
+                                    <span>: Urdu, English, Balti</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="right-contact" id="abc">
+                                <form action="" class="contact-form" id="aaa">
+                                    <div>
+                                        <div class="input-control i-c-2" id="bbb">
+                                            <input type="text" required placeholder="Your Name">
+
+                                        </div>
+                                        <div class="input-control" id="ccc">
+                                            <input type="email" required placeholder="Your E-mail">
+                                        </div>
+                                        <div class="input-control" id="fff">
+                                            <textarea name="" id="" cols="15" rows="8"
+                                                placeholder="Message Here..."></textarea>
+                                        </div>
+                                        <div id="submit-btn">
+                                            <button type="submit"
+                                                style="padding: 10px; margin-bottom: 1rem; overflow: hidden;">Submit</button>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+
+
+
+
+
+        <script>
+            // JavaScript function to toggle between light and dark modes
+            function toggleMode() {
+                const body = document.body;
+                body.classList.toggle("light-mode");
+                body.classList.toggle("dark-mode");
+            }
+
+        </script>
+</body>
+
+</html>
