@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hostel Management System</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <style>
+        /* Global Styles */
+
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        div:hover {
+            color: rgb(131, 74, 74);
+
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+
+        header {
+            background-color: #333333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main */
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        li {
+            width: calc(33.33% - 1rem);
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        li:last-child {
+            margin-right: 0;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        form input,
+        form select {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        form button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button[type="submit"]:hover {
+            background-color: #444;
+        }
+
+        /* Responsive Styles */
+
+        @media (max-width: 600px) {
+            ul {
+                flex-direction: column;
+            }
+
+            li {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    </style>
+    </head>
+
+    <header>
+        <h1>Hostel Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_classes_capitals">Home</a></li>
+                <li><a href="#">Rooms</a></li>
+                <li><a href="C:\Users\HC\.vscode\extensions\ritwickdey.liveserver-5.7.9\foam.html">Bookings</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Our Survices</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Welcome to Pak Ideal Hostel</h2>
+            <p>Our hostel provides comfortable and affordable accommodation for students and travelers.</p>
+            <button>Book Now</button>
+        </section>
+        <section>
+            <h2>Our Rooms</h2>
+            <ul>
+                <li>
+                    <h3>Single Room</h3>
+                    <p>Our single rooms are perfect for solo travelers or students. They come with a comfortable bed,
+                        desk, and en-suite bathroom.</p>
+                    <button>Book Now</button>
+                </li>
+                <li>
+                    <h3>Double Room</h3>
+                    <p>Our double rooms are great for couples or friends traveling together. They come with a
+                        comfortable bed, desk, and en-suite bathroom.</p>
+                    <button>Book Now</button>
+                </li>
+                <li>
+                    <h3>Dorm Room</h3>
+                    <p>Our dorm rooms are ideal for groups or budget-conscious travelers. They come with comfortable
+                        bunk beds and shared bathrooms.</p>
+                    <button>Book Now</button>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Bookings</h2>
+            <p>To make a booking, please fill out the form below:</p>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="check-in">Check-in date:</label>
+                <input type="date" id="check-in" name="check-in" required>
+                <label for="check-out">Check-out date:</label>
+                <input type="date" id="check-out" name="check-out" optional>
+                <label for="room-type">Room type:</label>
+                <select id="room-type" name="room-type" required>
+                    <option value="">Select a room type</option>
+                    <option value="single">Single Room</option>
+                    <option value="double">Double Room</option>
+                    <option value="dorm">Dorm Room</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section>
+            <h2>About Us</h2>
+            <p>We are a family-owned hostel that has been in business for over 10 years. Our mission is to provide
+                comfortable and affordable accommodation for travelers and students.</p>
+            <p>Address: CA-194 Hunza Colony near shall pump saidpur road RWP.
+            <section>
+            </section>
+            <h2>Contact Us</h2>
+            <div> Phone:<a href="#">03497001241</a></div>
+            </div>E-mail:<a href="#">zulqarnaialishigri@gmail.com:</a></div>
+        </section>
+        </section>
+        <h2>Our Services</h2>
+        <p>*Comfortable and inviting common areas.</p>
+        <p>*Plenty of clean. functional.</p>
+        <p>*Educated Staff.</p>
+        </p>*Free Wi-Fi.</p>
+        </section>
+        <section>
+            <body>
+                <html>
